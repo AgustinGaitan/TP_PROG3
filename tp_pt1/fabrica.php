@@ -17,10 +17,13 @@ class Fabrica
     }
 
     public function AgregarEmpleado($emp)
-    {
+    {   
+        
         if(count($this->_empleados) < $this->_cantidadMaxima)
-        {
+        {   
+            
             array_push($this->_empleados, $emp);
+            $this->EliminarEmpleadoRepetido();
         }
     }
 
@@ -28,10 +31,10 @@ class Fabrica
     {
         $total = 0;
 
+        
         foreach($this->_empleados as $item)
         {
-            $total += $item->GetSueldo();
-            $this->EliminarEmpleadoRepetido();
+            $total += $item->GetSueldo();          
         }
        
         return $total;
@@ -44,6 +47,7 @@ class Fabrica
             if($this->_empleados[$i] == $emp)
             {
                 unset($this->_empleados[$i]);
+                $this->_empleados = array_values($this->_empleados);
             }
         }
 
@@ -60,11 +64,11 @@ class Fabrica
 
         foreach($this->_empleados as $item)
         {
-            $cadena .= $item->toString();
+            $cadena .= $item->toString() . "<br>";
         }
         
         $cadena .="<br>" .  "Cantidad máxima de empleados: " .$this->_cantidadMaxima . " - " . "Razón social: " . $this->_razonSocial . " - "
-        . "Total sueldos: ". $this->CalcularSueldos();
+        . "Total sueldos: ". $this->CalcularSueldos() . "<br>";
 
         return $cadena;
     }

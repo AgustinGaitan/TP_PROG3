@@ -62,7 +62,7 @@ class Empleado extends Persona
 
     public function ToString()
     {
-        return parent::ToString(). " - " . " LEGAJO: " . $this->GetLegajo() ." - " . "SUELDO: " . $this->GetLegajo() . " - " . "TURNO: " . $this->GetTurno();
+        return parent::ToString(). " - " . " LEGAJO: " . $this->GetLegajo() ." - " . "SUELDO: " . $this->GetSueldo() . " - " . "TURNO: " . $this->GetTurno();
     }
 
 }
