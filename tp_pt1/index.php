@@ -2,18 +2,31 @@
 
 require_once "empleado.php";
 require_once "persona.php";
+require_once "fabrica.php";
 
+$humano_uno = new Empleado("Agustin","Gaitan",41639207,"Masculino",109796,20000,"Completo");
+$humano_dos = new Empleado("Jorgito","Rodolfo",4125223,"Masculino",51232,20000,"Mañana");
+$fabric = new Fabrica("Jorge");
 
-$humano = new Empleado("Agustin","Gaitan",41639207,"Masculino",109796,20000,"Completo");
+$arr = ["Español", "Francés","Inglés"];
+//$arr = ["Español"];
+//$arr = ["Español", "Francés","Inglés","Alemán","Checo"];
+/*echo $humano_uno->GetNombre();
+echo $humano_uno->GetApellido();
+echo $humano_uno->GetDni();
+echo $humano_uno->GetSexo();
+echo $humano_uno->GetLegajo();
+echo $humano_uno->GetSueldo();
+echo $humano_uno->GetTurno();*/
+echo $humano_uno->ToString();
+echo $humano_uno->Hablar($arr);
 
-/*echo $humano->GetNombre();
-echo $humano->GetApellido();
-echo $humano->GetDni();
-echo $humano->GetSexo();
-echo $humano->GetLegajo();
-echo $humano->GetSueldo();
-echo $humano->GetTurno();*/
-echo $humano->ToString();
+$fabric->AgregarEmpleado($humano_uno);
+$fabric->AgregarEmpleado($humano_dos);
+
+$fabric->EliminarEmpleado($humano_uno);
+
+echo "<br>" . $fabric->ToString();
 
 
 

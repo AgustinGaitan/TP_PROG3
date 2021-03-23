@@ -33,10 +33,32 @@ class Empleado extends Persona
         return $this->_turno;
     }
 
-    public function Hablar($idioma = ["Español","Inglés","Francés"])
-    {
-        return "El empleado habla " . $idioma[0] . $idioma[1] . $idioma[2];
-    }
+    public function Hablar($idioma)
+    {   
+        $cadena = "<br> " . "El empleado habla: ";
+        $flag = true;
+
+        foreach($idioma as $item)
+        {
+            if(count($idioma) == 1)
+            {
+                $cadena = $cadena . $item;
+            }
+            else if ($flag == false && count($idioma) != 1)
+            {
+                $cadena = $cadena . ", " . $item;
+            }
+            else
+            {   
+                
+                $cadena= $cadena ." ". $item;
+                $flag = false;
+            }
+           
+        }
+
+        return $cadena;
+    }   
 
     public function ToString()
     {
