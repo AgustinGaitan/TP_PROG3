@@ -42,8 +42,8 @@
 
       public function ToString()
       {
-         return "NOMBRE: ". $this->GetNombre() . "-" . "APELLIDO: " . "-" . $this->_apellido ."-" . "DNI: " . $this->_dni . "-".
-         "SEXO: " . $this->_sexo;
+         return "NOMBRE: ". $this->GetNombre() . " - " . "APELLIDO: " . " - " . $this->GetApellido() ." - " . "DNI: " . $this->GetDni() . " - ".
+         "SEXO: " . $this->GetSexo();
       }
 
 
