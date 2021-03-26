@@ -24,7 +24,10 @@ class Fabrica
             
             array_push($this->_empleados, $emp);
             $this->EliminarEmpleadoRepetido();
+            return true;
         }
+
+        return false;
     }
 
     public function CalcularSueldos()
@@ -48,8 +51,11 @@ class Fabrica
             {
                 unset($this->_empleados[$i]);
                 $this->_empleados = array_values($this->_empleados);
+                return true;
             }
         }
+
+        return false;
 
     }
 
@@ -75,3 +81,6 @@ class Fabrica
 
 
 }
+
+
+?>

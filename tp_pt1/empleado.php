@@ -66,3 +66,6 @@ class Empleado extends Persona
     }
 
 }
+
+
+?>
